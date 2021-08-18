@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>Foodbox Lu</title>
+    <style>
+      body {
+        background: #ced4da;
+        font-family:'Trebuchet MS';
+      }
+      .titulo {
+        background: #d62828;
+        color: white;
+        padding: 15px;
+        border-radius: 10px;
+        box-shadow: 0 0 10px 0 #bbbbbb;
+        text-align: center; 
+      }
+      .produto {
+        background: white;
+        padding: 15px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        box-shadow: 0 0 10px 0 #bbbbbb;
+        cursor: pointer;
+        border: 5px solid white;
+      }
+      h1 {
+        margin: 0;
+        font-weight: normal;
+      }
+      h2 {
+        margin: 0;
+        font-size: 18px;
+      }
+      h3 {
+        font-size: 30px;
+        margin-bottom: 5px;
+        
+      }
+      h4 {
+        margin-top: 0;
+        margin-bottom: 5px;
+        font-size: 20px;
+      }
+      img {
+        width: 130px;
+        height: 100px;
+        border-radius: 5px;
+        float: right;
+        
+      }
+      p {
+        margin: 15px 0 0 0;
+        font-style: italic;
+      }
+      .preco {
+        font-weight: bold;
+        font-size: 18px;
+      }
+      .botao {
+        background: #76c893;
+        text-align: center;
+        padding: 15px;
+        margin-top: 30px;
+        margin-bottom: 100px;
+        border-radius: 50px;
+        color: white;
+        font-weight: bold;
+        font-size: 18px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="titulo">
+      <h1>FoodBox</h1>
+      <h2>Monte seu box e receba em 15 minutos!</h2>
+    </div>
+
+    <h3>Primeiro seu prato</h3>
+    <div id="frango" class="produto" onclick="escolherFrango();">
+      <img src="img/fx.jpg" />
+      <h4>Frango Yin-Yang</h4>
+      <p>Um pouco de batata, um pouco de salada</p>
+      <p><strong>R$ 19,90</strong></p>
+    </div>
+
+    <div id="pf" class="produto" onclick="escolherPf();">
+      <img src="img/PF.jpg" />
+      <h4>Prato Feito</h4>
+      <p>Prato completo, acompanha batata e um pouco de salada</p>
+      <p><strong>R$ 19,90</strong></p>
+    </div>
+
+    <h3>Agora, sua bebida</h3>
+    <div id="cha" class="produto" onclick="escolherCha();">
+      <img src="img/chá.jpg" />
+      <h4>Chá Gelado</h4>
+      <p>Garrafa de chá gelado sabor pessego, de 300ml</p>
+      <p><strong>R$ 5,90</strong></p>
+    </div>
+
+    <div id="suco" class="produto" onclick="escolherSuco();">
+      <img src="img/suco.jpg" />
+      <h4>Suco do dia</h4>
+      <p>Suco feito de polpa da goiaba, 300ml</p>
+      <p><strong>R$ 4,90</strong></p>
+    </div>
+
+    <h3>Por fim, a sobremesa</h3>
+    <div id="morango" class="produto" onclick="escolherDoce();">
+      <img src="img/sobremesa.jpg" />
+      <h4>Maravilha de morango</h4>
+      <p>Sabor irresistivel, com pedaços de morango</p>
+      <p><strong>R$ 6,90</strong></p>
+    </div>
+
+    <div id="creme" class="produto" onclick="escolherCreme();">
+      <img src="img/creme.jpg" />
+      <h4>Crème Brûlée</h4>
+      <p>Equilíbrio perfeito de texturas cremosa e crocante</p>
+      <p><strong>R$ 7,90</strong></p>
+    </div>
+
+      <div class="botao" onclick="finalizarPedido();">
+        Finalizar pedido
+      </div>
+    </div>
+
+    <script>
+      let prato;
+      let bebida;
+      let sobremesa;
+     
+function escolherFrango() {
+  document.getElementById("frango").style.borderColor = "green";
+  document.getElementById("pf").style.borderColor = "white";
+    prato = "Frango Yin-Yang";
+}
+
+function escolherPf() {
+  document.getElementById("pf").style.borderColor = "green";
+  document.getElementById("frango").style.borderColor = "white";
+    prato = "Prato Feito";
+}
+
+function escolherCha() {
+  document.getElementById("cha").style.borderColor = "green";
+  document.getElementById("suco").style.borderColor = "white";
+    bebida = "Chá Gelado";
+}
+
+function escolherSuco() {
+  document.getElementById("suco").style.borderColor = "green";
+  document.getElementById("cha").style.borderColor = "white";
+    bebida = "Suco do dia";
+}
+
+function escolherDoce() {
+  document.getElementById("morango").style.borderColor = "green";
+  document.getElementById("creme").style.borderColor = "white";
+    sobremesa = "Maravilha de morango";
+}
+
+function escolherCreme() {
+  document.getElementById("creme").style.borderColor = "green";
+  document.getElementById("morango").style.borderColor = "white";
+    sobremesa = "Crème Brûlée";
+}
+
+function finalizarPedido() {
+  let mensagem;
+  mensagem = "Olá, gostaria de pedir um combo: " + prato + 
+  ", " + bebida + " e " 
+  + sobremesa;
+  
+  window.open("https://wa.me/+557599999999?text=" + mensagem)
+  }
+    </script>
+  </body>
+</html>
